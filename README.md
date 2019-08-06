@@ -14,10 +14,10 @@ Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.c
 >**Classes**
 - Agrupam atributos e métodos no mesmo lugar.  
 
->**Return**
+>**Return**  
 - Encerra a função e retorna um valor.  
 
->**eval()**
+>**eval()**  
 - Para cálculos (interpreta variável contendo +, -, *)  
 
 >**Funções Anônimas**
@@ -29,7 +29,7 @@ Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.c
 >**Callback**
 - Função de retorno como parâmetro após uma ação.  
 
->**DOM**
+>**DOM**  
 - Document Object Model - A estrutura como o HTML é formado.  
 
 >**window**
@@ -38,14 +38,14 @@ Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.c
 >**document**
 - Site  
 
->**TimeStamp**
+>**TimeStamp**  
 - Quantidade de segundos desde 01/01/1970 até hoje. No JS ele estará em milissegundos.  
 
->**new Date()**
+>**new Date()**  
 - Instância a data atual.  
 
->**toLocaleDateString(“pt-BR”)**
+>**toLocaleDateString(“pt-BR”)**  
 - Converte data para padrão BR.  
 
->**forEach()**
+>**forEach()**  
 - Laço para percorrer Array.
