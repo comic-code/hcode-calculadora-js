@@ -18,7 +18,7 @@ Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.c
 - Encerra a função e retorna um valor.  
 
 >**eval()**  
-- Para cálculos (interpreta variável contendo +, -, *)  
+- Para cálculos (interpreta variável contendo +, -, *), string  
 
 >**Funções Anônimas**
 - Não tem um nome e podem ser chamadas logo após criadas.  
@@ -48,4 +48,37 @@ Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.c
 - Converte data para padrão BR.  
 
 >**forEach()**  
-- Laço para percorrer Array.
+- Laço para percorrer Array.  
+
+# Calculadora
+
+{c:#B81365}CSS incorporado{/c} - CSS é aplicado diretamente no HTML.  
+
+SVG - Linguagem XML para descrever desenhos em vetor.  
+<br>
+POO Benefícios:
+Praticidade, Reutilização e Abstração.
+
+Instância - É quando um objeto representa uma classe.
+Encapsulamento - É uma forma de controlar quem tem acesso a um atributo ou um método.
+Public -  Todos acessam.
+	Protected -  Apenas atributos da mesma classe e classe pai.
+	Private - Somente atributos e métodos da mesma classe.
+
+class Calc Controller {
+   constructor(){
+       this._displayCal = '0';
+       this._dataAtual;
+   }
+}
+
+A cima uma convenção JS (o uso do _), para dizer que esse atributo ou método é privado.
+
+MVC:
+Model | View | Controller
+
+Model - Dados
+View - Interface
+Controller - O que pode ou não acontecer
+
+1 - C04 - Manipulando o DOM
