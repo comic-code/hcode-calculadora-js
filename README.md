@@ -52,33 +52,33 @@ Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.c
 
 # Calculadora
 
-{c:#B81365}CSS incorporado{/c} - CSS é aplicado diretamente no HTML.  
-
-SVG - Linguagem XML para descrever desenhos em vetor.  
+**CSS incorporado** - CSS é aplicado diretamente no HTML.  
+**SVG** - Linguagem XML para descrever desenhos em vetor.  
 <br>
-POO Benefícios:
-Praticidade, Reutilização e Abstração.
+**POO Benefícios**:
+>Praticidade, Reutilização e Abstração.
 
-Instância - É quando um objeto representa uma classe.
-Encapsulamento - É uma forma de controlar quem tem acesso a um atributo ou um método.
-Public -  Todos acessam.
-	Protected -  Apenas atributos da mesma classe e classe pai.
-	Private - Somente atributos e métodos da mesma classe.
+**Instância** - É quando um objeto representa uma classe.  
+**Encapsulamento** - É uma forma de controlar quem tem acesso a um atributo ou um método.  
+**Public** -  Todos acessam.  
+**Protected** -  Apenas atributos da mesma classe e classe pai.  
+**Private** - Somente atributos e métodos da mesma classe.  
 
+```js
 class Calc Controller {
    constructor(){
        this._displayCal = '0';
        this._dataAtual;
    }
 }
+```
+>A cima uma convenção JS (o uso do _), para dizer que esse atributo ou método é privado.
 
-A cima uma convenção JS (o uso do _), para dizer que esse atributo ou método é privado.
+**MVC:**  
+Model **|** View **|** Controller  
+<br>
+Model - Dados  
+View - Interface  
+Controller - O que pode ou não acontecer  
 
-MVC:
-Model | View | Controller
-
-Model - Dados
-View - Interface
-Controller - O que pode ou não acontecer
-
-1 - C04 - Manipulando o DOM
+## 1 - C04 - Manipulando o DOM
