@@ -89,8 +89,8 @@ Controller - O que pode ou não acontecer
 <br>
 **BOM** - Vem de "Browser Object Model. Seria a janela. "window". (barra de endereços, maximizar ou minimizar a janela, etc).  
 >Temo que ter cuidado ao interagir com o DOM para o site/aplicação não ficar tão pesada, afinal estamos mexendo com algo que já foi renderizado para o usuário.  
-
 <br>
+
 Usando o mouse, teclado ou outro, criamos **Eventos** - Que são ações disparadas na aplicação. (passou um determinado tempo, apertou uma tecla, clicou em algum lugar, etc. Tudo em seu documento).  
 <br>
 **What's "Document"?** - É o site.  
