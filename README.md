@@ -82,3 +82,32 @@ View - Interface
 Controller - O que pode ou não acontecer  
 
 ## 1 - C04 - Manipulando o DOM
+
+>É interessante programar sempre em inglês, afinal as palavras reservadas são em inglês, e o código fica legível para qualquer lugar do mundo.
+**Dica no VScode**: Selecionar uma palavra e apertar Ctrl + D ele irá selecionar todas partes do código que tem a mesma palavra.  
+<br>
+**BOM** - Vem de "Browser Object Model. Seria a janela. "window". (barra de endereços, maximizar ou minimizar a janela, etc).  
+>Temo que ter cuidado ao interagir com o DOM para o site/aplicação não ficar tão pesada, afinal estamos mexendo com algo que já foi renderizado para o usuário.  
+<br>
+Usando o mouse, teclado ou outro, criamos **Eventos** - Que são ações disparadas na aplicação. (passou um determinado tempo, apertou uma tecla, clicou em algum lugar, etc. Tudo em seu documento).  
+<br>
+**What's "Document"?** - É o site.  
+**close()** -  É um método que fecha a janela. ou seja, será usada após o window: **window.close();**  
+**document.querySelector** - Seleciona elementos por meio de **seletores CSS3**.
+
+```js
+initialize() {
+        let displayCalcEl = document.querySelector ('#display');
+        let dateEl = document.querySelector ('#data');
+        let timeEl = document.querySelector ('#hora');
+    }
+```
+>O javascript agora entende esses três caras.
+
+```js
+        displayCalcEl.innerHTML = "4567";
+        dateEl.innerHTML = "09/08/2020";
+        timeEl.innerHTML = "00:00";
+```
+
+>o .innerHTML serve parar  **mudar** o conteúdo em determinado elemento, no caso a cima um elemento que está associado a uma variável.
