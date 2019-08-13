@@ -144,6 +144,7 @@ setInterval (() => {
 **PS²:** Note que foi usado uma Arrow Function.  
 <br>
 **Parando o Intervalo *(não necessário para o projeto)***  
+
 ```js
 let interval = setInterval (() => {
 
@@ -158,12 +159,14 @@ let interval = setInterval (() => {
         
         }, 10000);
 ```
+
 >Depois de 10 segundos, o setInterval irá parar  
 **PS:** O set Interval foi associado a uma váriavel.  
 <br>
 **Informações demoram 1000 milissegundos para aparecer**
 Isso acontece pois o setInterval espera 1 segundo para rodar a primeira vez.  
-Para concertar isso definimos as informações antes do setInterval *(Já que iremos usar mais de uma vez, transformaremos em um método.)*
+Para concertar isso definimos as informações antes do setInterval *(Já que iremos usar mais de uma vez, transformaremos em um método.)*  
+
 ```js
 initialize() {
 
