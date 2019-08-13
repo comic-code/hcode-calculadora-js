@@ -129,7 +129,7 @@ initialize() {
 **Refatorar** - Melhorar ou revazar o código, otimizando o mesmo.  
 <br>
 
-**Definindo um intervalo de repetição para a hora:**  
+##### Definindo um intervalo de repetição para a hora:  
 ```js
 setInterval (() => {
 
@@ -140,10 +140,11 @@ setInterval (() => {
     }
 ```
 >O "1000" representa os milissegundos para repetir o trecho de código.  
+
 **PS:** Foi usado o this._locale para guardar a localização.  
 **PS²:** Note que foi usado uma Arrow Function.  
 <br>
-**Parando o Intervalo *(não necessário para o projeto)***  
+##### Parando o Intervalo (não necessário para o projeto) 
 
 ```js
 let interval = setInterval (() => {
@@ -161,9 +162,12 @@ let interval = setInterval (() => {
 ```
 
 >Depois de 10 segundos, o setInterval irá parar  
+
 **PS:** O set Interval foi associado a uma váriavel.  
 <br>
-**Informações demoram 1000 milissegundos para aparecer**
+
+##### Informações demoram 1000 milissegundos para aparecer
+
 Isso acontece pois o setInterval espera 1 segundo para rodar a primeira vez.  
 Para concertar isso definimos as informações antes do setInterval *(Já que iremos usar mais de uma vez, transformaremos em um método.)*  
 
@@ -182,7 +186,7 @@ initialize() {
 ```
 
 <br>
-**Formatando mais uma vez a data no display**  
+##### Formatando mais uma vez a data no display  
 >Note a manipulação em cada parte da data :)  
 
 ```js
