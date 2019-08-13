@@ -46,7 +46,17 @@ Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.c
 
 >**toLocaleDateString(“pt-BR”)**  
 - Converte data para padrão BR.  
+>**toLocaleTimeString('pt-BR')**  
+- Formata a hora.
+**variavel.getDate();** - Retorna o dia da variável.  
+**variavel.getMonth();** - Retorna o mês da variável.  
+**variaval.getFullYear();** - Retorna o ano da variável.  
+```js
+variavel.toLocaleDateString('pt-BR', (month:'long'))
 
+long = completo
+short = abreviado
+```
 >**forEach()**  
 - Laço para percorrer Array.  
 
@@ -113,3 +123,72 @@ initialize() {
 ```
 
 >o .innerHTML serve parar  **mudar** o conteúdo em determinado elemento, no caso a cima um elemento que está associado a uma variável.
+
+## 2 - C05 - Data e Hora  
+
+**Refatorar** - Melhorar ou revazar o código, otimizando o mesmo.  
+<br>
+
+**Definindo um intervalo de repetição para a hora:**  
+```js
+setInterval (() => {
+
+            this.displayDate = this.currentDate.toLocaleDateString(this._locale);
+            this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
+
+        }, 1000)
+    }
+```
+>O "1000" representa os milissegundos para repetir o trecho de código.  
+**PS:** Foi usado o this._locale para guardar a localização.  
+**PS²:** Note que foi usado uma Arrow Function.  
+<br>
+**Parando o Intervalo *(não necessário para o projeto)***  
+```js
+let interval = setInterval (() => {
+
+            this.displayDate = this.currentDate.toLocaleDateString(this._locale);
+            this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
+
+        }, 1000);
+
+        setTimeout(() => {
+
+            clearInterval(interval);
+        
+        }, 10000);
+```
+>Depois de 10 segundos, o setInterval irá parar  
+**PS:** O set Interval foi associado a uma váriavel.  
+<br>
+**Informações demoram 1000 milissegundos para aparecer**
+Isso acontece pois o setInterval espera 1 segundo para rodar a primeira vez.  
+Para concertar isso definimos as informações antes do setInterval *(Já que iremos usar mais de uma vez, transformaremos em um método.)*
+```js
+initialize() {
+
+        this.setDisplayDateTime();
+
+        setInterval (() => {
+
+            this.setDisplayDateTime();
+
+        }, 1000);
+
+    }
+```
+
+<br>
+**Formatando mais uma vez a data no display**  
+>Note a manipulação em cada parte da data :)  
+
+```js
+setDisplayDateTime() {
+        this.displayDate = this.currentDate.toLocaleDateString(this._locale, {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric'
+        });
+        this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
+    }
+```
