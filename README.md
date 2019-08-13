@@ -1,6 +1,4 @@
-# Calculadora JavaScript
-
-[![Hcode Treinamentos](https://www.hcode.com.br/res/img/hcode-200x100.png)](https://www.hcode.com.br)
+# Calculadora JavaScript  
 
 Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.com.
 
@@ -130,6 +128,7 @@ initialize() {
 <br>
 
 ##### Definindo um intervalo de repetição para a hora:  
+
 ```js
 setInterval (() => {
 
@@ -187,6 +186,7 @@ initialize() {
 
 <br>
 ##### Formatando mais uma vez a data no display  
+
 >Note a manipulação em cada parte da data :)  
 
 ```js
@@ -199,3 +199,37 @@ setDisplayDateTime() {
         this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
     }
 ```
+
+## 3 - C06 - querrySelector
+
+```js
+    document.querySelector('#buttons > g, #parts > g');
+```  
+>Trará apenas o primeiro elemento possível.  
+
+```js
+    document.querySelectorAll('#buttons > g, #parts > g');
+```  
+>Trará **todos** os elementos possíveis.  
+
+## 4 - C07 - Adicionando Evento Click
+
+O JavaScript reage a eventos de click, teclado, tempo e interações do próprio usuário, e vários outros.  
+Podemos adicionar várias escutas de eventos e tratar depois.
+
+```js
+    initButtonsEvents() {
+
+            let buttons = document.querySelectorAll('#buttons > g, #parts > g');
+            buttons.forEach((btn,index) => {
+                
+                btn.addEventListener('click', e=> {
+
+                    console.log(btn.className.baseVal.replace('btn-', ''));
+        
+                });
+        
+            })
+        }
+```  
+>replace foi usado para retirar parte do nome da **classe** dos elementos.
