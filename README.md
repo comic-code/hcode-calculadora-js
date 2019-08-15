@@ -185,6 +185,7 @@ initialize() {
 ```
 
 <br>
+
 ##### Formatando mais uma vez a data no display  
 
 >Note a manipulação em cada parte da data :)  
@@ -233,3 +234,45 @@ Podemos adicionar várias escutas de eventos e tratar depois.
         }
 ```  
 >replace foi usado para retirar parte do nome da **classe** dos elementos.
+
+## 5 - C08 - Aplicando vários Eventos usando split()
+
+As vezes precisamos de vários eventos fazendo a mesma função, então não é interessante copiar os mesmos códigos.  
+Por exemplo, nesta situação se o usuário sem querer clicar e puxar o botão do número, não será considerado como um clique (imagine em um disposito móvel).  
+
+>Será necessário transformar uma string (contendo os eventos), em um Array.  
+>E é claro, criar um evento próprio, já que o addEventListener não capta mais de um evento.  
+
+>Repare que o **split()** necessita de um parâmetro para saber como irá divitir o array, nesse caso o espaço foi usado. 
+
+
+```js
+    addEventListenerAll (element, events, fn ) {
+            
+            events.split(' ').forEach(event => {
+
+                element.addEventListener(event, fn, false);
+
+            });
+
+        }
+```  
+
+>Note que element a cima, se refere a btn abaixo. 'click drag mouseover' *(esse ultimo não usado no projeto)* se refere aos eventos a cima.
+
+```js
+    initButtonsEvents() {
+
+        let buttons = document.querySelectorAll('#buttons > g, #parts > g');
+        buttons.forEach((btn,index) => {
+            
+            this.addEventListenerAll(btn, 'click drag mouseover', e => {
+
+                console.log(btn.className.baseVal.replace('btn-', ''));
+    
+            });
+    
+        });
+    }
+```
+
