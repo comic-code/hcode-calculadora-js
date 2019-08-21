@@ -277,3 +277,36 @@ Por exemplo, nesta situação se o usuário sem querer clicar e puxar o botão d
     }
 ```
 
+## 6 - C09 - Switch  
+
+É usado quando se sabe valores exatos para decidir um fluxo de código.  
+
+##### Adicionando/Removendo elementos no final de Arrays
+```js
+    operation.push(value);  //Value será adicionado no fim do Array
+    
+    operation.pop();        //Remove o ultimo elemento do Array
+```  
+
+> Ou seja, o **pop** será utilizado no CE, afinal, essa tecla limpa apenas a ultima entrada da calculadora:  
+
+```js
+//Criando o método
+    clearEntry() {
+        
+        this._operation.pop();
+
+    }
+//_____________________________________________________
+//No Switch
+    switch(value) {
+        
+        case 'ac':
+            this.clearAll();
+            break;
+//...
+```
+
+##### Zerando o display
+
+> Basta apenas  
