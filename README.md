@@ -301,12 +301,114 @@ Por exemplo, nesta situação se o usuário sem querer clicar e puxar o botão d
 //No Switch
     switch(value) {
         
-        case 'ac':
-            this.clearAll();
+        case 'ce':
+            this.clearEntry();
             break;
 //...
-```
+```  
 
 ##### Zerando o display
 
-> Basta apenas  
+Basta apenas associar um array vazio a variável ao display:  
+
+```js
+//Criando o método
+    clearAll() {
+        this._operation = []; 
+    }
+//_____________________________________________________
+//No Switch
+    switch(value) {
+            
+        case 'ac':
+            this.clearAll();
+            break;
+```  
+
+##### Recuperando os números clicados (sem tratar o array/display)
+
+Recupere o **value** pelo switch, caso for um número de 1 a 9:  
+
+```js
+    case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+                this.addOperation(parseInt(value));
+                break
+```
+
+>Note que o valor é recebido como uma **string**, sendo assim foi usado o parseInt.
+>ps: O trabalho ainda não está completo, já que os números do Array são associados a posições diferentes e não concatendos :/
+
+## 7 - C10 - Adicionando Operações - isNaN e Array.length
+
+**isNaN -** Valida se não é um número. Exemplo:  
+```js
+    window.isNaN('a');
+    //Retornará True, já que não é um número
+    window.isNaN(1);
+    //Retornará False, já que é um número
+
+    window.isNaN('2');
+    //Retornará False, pois o JS consegue converter para o teste.
+```
+
+**Retornando a ultima operação**  
+Para concatenar os números digitados, será nescessário transformar os mesmos em **string**, ou seja:
+
+```js
+    this.getLastOperation().toString() + value.toString;
+```
+
+>Porém, no escopo do projeto, é necessário antes um teste para saber se é número, ou operação e também se o usuário quer trocar de operação ou não  
+
+**Caso ele queira**
+```js
+    isOperator() {
+        return (['+', '-', '*', '/', '%'].indexOf(value) > -1);
+    }
+    //Se não for nenhuma adição ele retornatá false
+```  
+<br>
+```js
+   addOperation(value) {
+        
+        if (isNaN(this.getLastOperation())) {
+ 
+            if (this.isOperator(value)) {
+         
+                this.setLastOperation(value);
+         
+            } else {
+         
+                this._operation.push(value);
+         
+            }
+         
+        } else {
+         
+            if (this.isOperator(value)) {
+         
+                this._operation.push(value);
+         
+            } else {
+         
+                let newValue = this.getLastOperation().toString() + value.toString();
+         
+                this.setLastOperation(parseInt(newValue));
+         
+            }
+         
+        }
+        console.log(this._operation);
+    }
+```
+> *Ainda não aparece no display.*
+
