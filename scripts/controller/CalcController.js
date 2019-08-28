@@ -47,15 +47,42 @@ class CalcController {
     }
 
     setLastOperation(value) {
+
         this._operation[this._operation.length - 1] = value;
+    
     }
 
     isOperator(value) {
         return (['+', '-', '*', '/', '%'].indexOf(value) > -1);
     }
 
-    addOperation(value) {
+    pushOperation(value) {
+        this._operation.push(value);
+
+        if(this._operation.length > 3) {
+
+            this.calc();
+
+        }
+    }
+
+    calc() {
         
+        let last = this._operation.pop;
+
+        let result = eval(this._operation.join(''));
+
+        this._operation = [result, last];
+    }
+
+    setLastNumberToDisplay() {
+
+        
+
+    }
+
+    addOperation(value) {
+
         if (isNaN(this.getLastOperation())) {
  
             if (this.isOperator(value)) {
@@ -64,7 +91,7 @@ class CalcController {
          
             } else {
          
-                this._operation.push(value);
+                this.pushOperation(value);
          
             }
          
@@ -72,18 +99,21 @@ class CalcController {
          
             if (this.isOperator(value)) {
          
-                this._operation.push(value);
+                this.pushOperation(value);
          
             } else {
-         
+                
                 let newValue = this.getLastOperation().toString() + value.toString();
          
                 this.setLastOperation(parseInt(newValue));
          
+                //Atualizar display
+                this.setLastNumberToDisplay();
+
             }
          
         }
-        console.log(this._operation);
+
     }
 
     setError() {

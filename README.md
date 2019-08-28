@@ -374,9 +374,11 @@ Para concatenar os números digitados, será nescessário transformar os mesmos 
     isOperator() {
         return (['+', '-', '*', '/', '%'].indexOf(value) > -1);
     }
-    //Se não for nenhuma adição ele retornatá false
-```  
-<br>
+    //Se não for nenhuma operação ele retornatá false
+```
+
+>Em addOperation:
+
 ```js
    addOperation(value) {
         
@@ -410,5 +412,29 @@ Para concatenar os números digitados, será nescessário transformar os mesmos 
         console.log(this._operation);
     }
 ```
-> *Ainda não aparece no display.*
+> *informações ainda não aparecem no display.*
+
+## 8 - C11 - Eval - Validando o Primeiro Operador e Calculando Resultado  
+
+**Precedência de Operadores** - Especifica quem tem mais prioridade quando há duas delas juntas. Um exemplo seria  
+
+>1+5*3  
+
+Que seria resolvido com a multiplicação primeiro e depois a soma.  
+Porém a ideia nesse projeto é calcular a cada 3 itens no Array **(ou seja, 1 valor, 1 operador e 1 valor)**.  
+
+> Agora será necessário 'juntar' os 3 elementos o **eval()**, >porém antes, temos que converter de Array para uma **string**  
+>ps: não se pode usar o **.toString**, pois o mesmo irá contar as vírgulas.  então usaremos o **.join**
+
+
+```js
+    calc() {
+        
+        let last = this._operation.pop;
+
+        let result = eval(this._operation.join(''));
+
+        this._operation = [result, last];
+    }
+```  
 
