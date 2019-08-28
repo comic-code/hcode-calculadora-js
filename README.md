@@ -423,7 +423,7 @@ Para concatenar os números digitados, será nescessário transformar os mesmos 
 Que seria resolvido com a multiplicação primeiro e depois a soma.  
 Porém a ideia nesse projeto é calcular a cada 3 itens no Array **(ou seja, 1 valor, 1 operador e 1 valor)**.  
 
-> Agora será necessário 'juntar' os 3 elementos o **eval()**, >porém antes, temos que converter de Array para uma **string**  
+> Agora será necessário 'juntar' os 3 elementos o **eval()**, porém, antes temos que converter de Array para uma **string**  
 >ps: não se pode usar o **.toString**, pois o mesmo irá contar as vírgulas.  então usaremos o **.join**
 
 
@@ -438,3 +438,15 @@ Porém a ideia nesse projeto é calcular a cada 3 itens no Array **(ou seja, 1 v
     }
 ```  
 
+## 9 - C12 - For -  Procurando o último número do Array  
+
+##### Estrutura do for    
+
+>Valor inicial **|** Valor final **|** Incremento/decremento  
+>ps: **break** para o for
+
+```js
+    for(let i = 0; <= 100; i++) {
+        console.log(i);
+    }
+```
