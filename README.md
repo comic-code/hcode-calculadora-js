@@ -449,4 +449,55 @@ Porém a ideia nesse projeto é calcular a cada 3 itens no Array **(ou seja, 1 v
     for(let i = 0; <= 100; i++) {
         console.log(i);
     }
+```  
+
+>Sendo assim, para achar o último número do Array:  
+
+```js
+    setLastNumberToDisplay() {
+
+        let lastNumber;
+        
+        for(let i = this._operation.length - 1; i >= 0; i--) {
+
+            if (!this.isOperator(this._operation[i])) {
+                lastNumber = this._operation[i];
+                break;
+            }
+        }
+
+        this.displayCalc = lastNumber;
+
+    }
+```  
+
+## 10 - C13 - Botão Porcento  
+
+Temos que observar que o JS utiliza o **%**, para calcular o módulo de um número. ou seja:  
+
+>10%2
+
+Retornará 0.  
+Sendo assim, precisamos tratar esse **%**.  
+
+```js
+    if(last == '%') {
+
+            result /= 100;
+
+            this._Operation = [result];
+
+        }
 ```
+
+##### Botão Igual 
+
+```js
+    //No switch
+    case 'igual':
+                this.calc();
+                break;
+```  
+
+## 11 - C15 - Botão Ponto
+
