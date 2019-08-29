@@ -499,5 +499,24 @@ Sendo assim, precisamos tratar esse **%**.
                 break;
 ```  
 
-## 11 - C15 - Botão Ponto
+## 11 - C15 - Botão Ponto  
 
+Em alguns lugares temos o parseInt(), que serve para números inteiros, porém, com o uso do ponto, necessitamos do parseFloat(), para números frácionados.
+
+```js
+    addDot() {
+
+        let lastOperation = this.getLastOperation();
+
+        if (this.isOperator(lastOperation) || !lastOperation) {
+
+            this.pushOperation('0.')
+        
+        } else {
+
+            this.setLastOperation(lastOperation.toString() + '.');
+        }
+
+        this.setLastNumberToDisplay();
+    }
+```
