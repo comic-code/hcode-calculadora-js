@@ -520,3 +520,27 @@ Em alguns lugares temos o parseInt(), que serve para números inteiros, porém, 
         this.setLastNumberToDisplay();
     }
 ```
+
+#### Corrigindo alguns bugs
+
+>É preciso verificar se o valor já tem um ponto (afinal, não deveria ser possível usar mais de um ponto)  
+
+```js
+    addDot() {
+
+        let lastOperation = this.getLastOperation();
+
+        if (typeof lastOperation === 'string' && lastOperation.split('').indexOf('.') > -1) return;
+
+        if (this.isOperator(lastOperation) || !lastOperation) {
+
+            this.pushOperation('0.')
+        
+        } else {
+
+            this.setLastOperation(lastOperation.toString() + '.');
+        }
+
+        this.setLastNumberToDisplay();
+    }
+```
