@@ -599,3 +599,36 @@ Dos eventos de teclado, o que mais nos interessa é o **"keyup"**
         });
     }
 ```
+
+## 13 - C18 - Ctrl + c e Ctrl + v
+
+```js
+    //CTRL + C
+    copyToClipboard() {
+    
+        let input = document.createElement('input');
+
+        input.value = this.displayCalc;
+
+        document.body.appendChild(input);
+
+        input.select();
+
+        document.execCommand('Copy');
+
+        input.remove();
+    }
+
+    //CTRL + V
+    pasteFromClipboard() {
+
+        document.addEventListener('paste', e=> {
+
+            let text = e.clipboardData.getData('Text');
+        
+            this.displayCalc = parseFloat(text);
+
+            console.log(text);
+        });
+    }
+```
