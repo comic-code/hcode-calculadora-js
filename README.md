@@ -650,3 +650,22 @@ Sempre que passar de 10 dígitos, retornaremos um erro.
     }
 ```
 
+## 15 - C21 - Tratar Outros Erros com Try Catch
+
+>Tente fazer uma coisa, se não conseguir faça outra coisa
+
+```js
+    getResult() {
+
+        try {
+
+            return eval(this._operation.join(''));
+        } catch(e) {
+
+            setTimeout(()=>{
+                
+                this.setError();
+            }, 1);
+        }
+    }
+```
