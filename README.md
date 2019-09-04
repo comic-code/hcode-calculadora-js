@@ -635,5 +635,18 @@ Dos eventos de teclado, o que mais nos interessa é o **"keyup"**
 
 ## 14 - C20 - Definir o Valor Máximo
 
+Sempre que passar de 10 dígitos, retornaremos um erro.  
 
+```js
+    //repare na conversão do value para string
+    set displayCalc(value) {
+
+        if(value.toString().length > 10) {
+            this.setError();
+            return false;
+        }
+
+        this._displayCalcEl.innerHTML = value;
+    }
+```
 
